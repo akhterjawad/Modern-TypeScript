@@ -88,3 +88,32 @@ console.log('hello TypeScript.');
 // user.lastName = "khan";
 
 // console.log(user);
+
+// ===== INTERFASE ====
+
+interface Employee {
+    empliyee: string;
+    employeeId: number;
+    employeeSallary: number;
+    isLoggedIn: boolean
+}
+
+
+let employeeData: Employee = {
+    empliyee: 'jawad khan',
+    employeeId: 12,
+    employeeSallary: 100000,
+    isLoggedIn: true
+}
+
+console.log(employeeData);
+
+// for (const key in employeeData) {
+//     console.log(employeeData[key]);
+// }
+
+
+// let array = [12,23,4,54,6,57,8,10];
+
+// array.map(item => {
+//     console.log(item);
