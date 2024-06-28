@@ -38,7 +38,7 @@ let usernameMain:string = 'abdullah';
 
 // type any
 
-// type any ma ya hota ha ka data type ki jagha any ka key word lagadata ha is sa ya hota ha ka hum variable ki value ma jo likhta ha ,Number ,boolean ,string automatically type get karlata ha 
+// type any ma ya hota ha ka data type ki jagha any ka key word lagadata ha is sa ya hota ha ka hum variable ki value ma jo likhta ha ,Number ,boolean ,string automatically type get karlata ha ,variable ki value 
 
 
 let username:any = 'abdullah'
@@ -57,6 +57,8 @@ username = 20 // allowed
 
 //-----Type Inference-----//
 
+// Type Inference ma ya hota ha ka agar hum variable ki data type define na kara Type Annotations ki tarha to koi error nahi ata
+
 // let username = 'abdullah'
 // username = 20
 
@@ -67,13 +69,17 @@ username = 20 // allowed
 
 //-----Type Aliases-----//
 
+// Type Aliases ma ya hota ha ka hum data type ka variable alag sa banalata ha type ka keyword sa instead of hum variable ka ander hi data type define kara
+
 // type Abd = string
 
 // let user:Abd = 'abdullah'
 
-// type Fruits = (string | number)[]
+// 1 hoti ha union data type jisma aap multi data type define karsakta ha jaisa array ma alag alag properties hoti ha unka lia bana sakta ha
 
-// let fruits:Fruits = ['abdullah' , 20 , true]
+type Fruits = (string | number| boolean)[]
+
+let fruits:Fruits = ['abdullah' , 20 , true]
 
 // type User = {
 //     username: string;
