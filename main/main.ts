@@ -1,6 +1,12 @@
 console.log('hello TypeScript.');
 
-// TS Compiler P
+
+// tsc filename.ts  is command sa JS ki file banjati ha
+// node filename.js  is command sa TS terminal pa run hogi
+// tsc filename.ts -w  is command sa TS live server ki tarha JS ma kam karti ha
+
+
+// TS Compiler   p
 // Type Annotations
 // Type Inference
 // Type Aliases
@@ -14,23 +20,29 @@ console.log('hello TypeScript.');
 
 //-----Type Annotations-----//
 
-// let username:string = 'abdullah';
+// Type Annotations ya hota ha ka jub aap TS ma variable banay to hath ka hath variable ki value ki type bhi batay
+
+let usernameMain:string = 'abdullah';
 // username = true //not allowed
-// console.log(username);
+// console.log(usernameMain);
 
 // let age:number = 20;
-// age = 21
+// age = 21  // allowed
 // console.log(age);
 
 // let isLoggedIn:boolean = true
 // console.log(isLoggedIn);
 
+// is tarika sa hum string ki array ki data type bata ta ha ,is array ma numbar ya boolean nahi dal sakta 
 // let user:string[] = ['abdullah']
 
 // type any
 
-// let username:any = 'abdullah'
-// username = 20
+// type any ma ya hota ha ka data type ki jagha any ka key word lagadata ha is sa ya hota ha ka hum variable ki value ma jo likhta ha ,Number ,boolean ,string automatically type get karlata ha 
+
+
+let username:any = 'abdullah'
+username = 20 // allowed
 
 // function sum(num1: number, num2: number):number {
 //   return num1 + num2;
