@@ -81,6 +81,18 @@ type Fruits = (string | number| boolean)[]
 
 let fruits:Fruits = ['abdullah' , 20 , true]
 
+//object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha
+
+const object = {
+  username: "abc",
+  email: "abc@gmail.com",
+  age: 20,
+  isLoggedIn: true,
+};
+
+// console.log(object.user);// not allow
+
+
 // type User = {
 //     username: string;
 //     email: string;
