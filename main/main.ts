@@ -146,7 +146,7 @@ const person2: {
 }
 
 
-// agar hum data type define kara oska bad phir nicha usma kuch or add kara to   key word (type)   sa error ata ha isi lia hum INTERFASE ka key word use karta ha
+// agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
 // type User = {
 //     username: string;
@@ -175,6 +175,8 @@ const person2: {
 // console.log(user);
 
 // ===== INTERFASE ====
+
+// agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
 interface Employee {
   empliyee: string;
