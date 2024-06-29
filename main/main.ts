@@ -174,8 +174,6 @@ const person2: {
 
 // console.log(user);
 
-// ===== INTERFASE ====
-
 // agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
 interface Employee {
@@ -195,12 +193,4 @@ let employeeData: Employee = {
 
 console.log(employeeData);
 
-// for (const key in employeeData) {
-//     console.log(employeeData[key]);
-// }
 
-
-// let array = [12,23,4,54,6,57,8,10];
-
-// array.map(item => {
-//     console.log(item);
