@@ -75,6 +75,13 @@ username = 20 // allowed
 
 // let user:Abd = 'abdullah'
 
+
+//-----Union Type-----//
+// type User = string | number;
+// let username: User = 1;
+// type Fruits = (string | number | boolean)[]
+// let fruits:Fruits = ['mango' , 'orange' , 20 , true]
+
 // 1 hoti ha union data type jisma aap multi data type define karsakta ha jaisa array ma alag alag properties hoti ha unka lia bana sakta ha
 
 type Fruits = (string | boolean | number)[]// in types ko agay picha karna sa farak nahi parta
@@ -107,7 +114,8 @@ object.username = 'kamran'
 // console.log(object.user);// not allow
 
 
-// agar hum kuch bhi object ki data type ma likhta ha or agar wo object ma define na ho to error ata ha or agar object ka ander koi chez likhi ho or data type ma likhi na ha to bhi error atta ha.agar hum data type ka ander property ka sath   ?   yala sign lagada to error nahi ata
+// agar hum kuch bhi object ki data type ma likhta ha or agar wo object ma define na ho to error ata ha or agar object ka ander koi chez likhi ho or data type ma likhi na ha to bhi error atta ha.agar hum data type ka ander property ka sath   ?   yala sign lagada to error nahi ata.
+
 // const person: {
 //   name: string;
 //   age: number;
@@ -148,33 +156,30 @@ const person2: {
 
 // agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
-// type User = {
-//     username: string;
-//     email: string;
-//     age: number;
-//     isLoggedIn: boolean;
-// }
 
-// type User = {
-//   username: string;
-//   email: string;
-//   age: number;
-//   isLoggedIn: boolean;
-//   lastName?: string;
-// };
+type User = {
+  username: string;
+  email: string;
+  age: number;
+  isLoggedIn: boolean;
+  lastName?: string;
+};
 
-// const UserMain: User = {
-//   username: "abc",
-//   email: "abc@gmail.com",
-//   age: 20,
-//   isLoggedIn: true,
-// };
+const UserMain: User = {
+  username: "abc",
+  email: "abc@gmail.com",
+  age: 20,
+  isLoggedIn: true,
+};
 
-// UserMain.lastName = "khan";
+UserMain.lastName = "khan";
 
 // console.log(user);
 
-// agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
+
+//-----Interfaces-----//
+
+// Interfaces commonly object ka lia use hota ha or ya   key word type  ki tarha kam karta ha bs is ma = ka sign nahi ata
 
 interface Employee {
   empliyee: string;
@@ -183,14 +188,126 @@ interface Employee {
   isLoggedIn: boolean
 }
 
-
 let employeeData: Employee = {
   empliyee: 'jawad khan',
   employeeId: 12,
   employeeSallary: 100000,
   isLoggedIn: true
 }
-
 console.log(employeeData);
 
 
+//-----Interfaces vs Type Aliases-----//
+
+// agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
+
+// type User = {
+//     username: string;
+//     age: number;
+// }
+
+// type User = {     //wrong syntax
+//     lastname: string
+// }
+
+// interface User {
+//   username: string;
+//   age: number;
+// }
+
+// interface User {
+//   lastname: string;
+// }
+
+// const user: User = {
+//   username: "abc",
+//   age: 20,
+//   lastname: "khan",
+// };
+
+// interface Fruit {
+//   fruitName: string;
+//   price: number;
+//   state: string;
+// }
+
+// interface Mango extends Fruit {
+//   type: string;
+// }
+
+// let fruit: Fruit = {
+//   fruitName: "cherry",
+//   price: 1000,
+//   state: "KPK",
+// };
+
+// let mango: Mango = {
+//   fruitName: "mango",
+//   price: 3000,
+//   state: "sindh",
+//   type: "sindhri",
+// };
+
+// type Fruit = {
+//   fruitName: string;
+//   price: number;
+//   state: string;
+// };
+
+// type Mango = Fruit & {
+//   type: string;
+// };
+
+// let fruit: Fruit = {
+//   fruitName: "cherry",
+//   price: 1000,
+//   state: "KPK",
+// };
+
+// let mango: Mango = {
+//   fruitName: "mango",
+//   price: 3000,
+//   state: "sindh",
+//   type: "sindhri",
+// };
+
+//-----Enums-----//
+
+// enum CardinalDirections {
+//   North,
+//   East,
+//   South,
+//   West,
+// }
+// let currentDirection = CardinalDirections.North;
+// console.log(currentDirection);
+
+// enum User {
+//   admin = "admin",
+//   user = "user",
+// }
+
+// console.log(User.admin);
+
+// enum StatusCodes {
+//   NotFound = 404,
+//   Success = 200,
+//   Accepted = 202,
+//   BadRequest = 400,
+// }
+
+// StatusCodes.NotFound;
+
+//-----Generics-----//
+
+// function identity<T>(arg: T): T {
+//   return arg;
+// }
+
+// console.log(identity('abd'));
+
+// function identity(arg: any): any {
+//   return [arg];
+// }
+
+// console.log(identity("abd"));
