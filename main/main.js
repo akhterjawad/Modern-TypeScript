@@ -30,7 +30,15 @@ var usernameMain = 'abdullah';
 var username = 'abdullah';
 username = 20; // allowed
 var fruits = ['abdullah', 20, true];
-//object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha
+// agar array ki data type string ho or hum array ma number push ,add kara to reeor ata ha  data type ki waja sa
+fruits.push(9);
+fruits[0] = 'jawad';
+fruits[0] = 4;
+// main[0] pa isilia error araha ha Q ka data type Type Inference ki waja sa string hogay ha
+var main = ['jawad'];
+// main[0] = true;// not allow
+// main.push(4);// not allow
+//object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha.
 var object = {
     username: "abc",
     email: "abc@gmail.com",
