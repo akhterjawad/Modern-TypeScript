@@ -1,5 +1,7 @@
 console.log('hello TypeScript.');
 
+// TypeScript is a superset of JavaScript that adds optional static typing and other features to improve the development experience and maintainability of large JavaScript applications.
+
 
 // tsc filename.ts  is command sa JS ki file banjati ha
 // node filename.js  is command sa TS terminal pa run hogi
