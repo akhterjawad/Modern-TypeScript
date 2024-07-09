@@ -2,7 +2,7 @@ console.log('hello TypeScript.');
 
 // TypeScript is a superset of JavaScript that adds optional static typing and other features to improve the development experience and maintainability of large JavaScript applications.
 
-// npm install -g typescript  is command sa ya hota ha ka  TS  globally download hojati ha || is command ko cmd ma run karta ha || download hui ha ka nahi iska lia hum cmd ma  tsc --version  run karta ha
+// npm install -g typescript  is command sa ya hota ha ka  TS  globally download hojati ha || is command ko cmd ma run karta ha || download hui ha ka nahi iska lia hum cmd ma  tsc --version  run karta ha to pata chalta ha ka  TS  aap ka pc ma ha ya nahi
 // tsc filename.ts  is command sa JS ki file banjati ha
 // node filename.js  is command sa TS terminal pa run hogi
 // tsc filename.ts -w  is command sa TS live server ki tarha JS ma kam karti ha
@@ -46,16 +46,16 @@ let usernameMain: string = 'abdullah';
 let username: any = 'abdullah'
 username = 20 // allowed
 
-// function sum(num1: number, num2: number):number {
-//   return num1 + num2;
-// }
-// console.log(sum(20, 30));
+function sum(num1: number, num2: number):number {
+  return num1 + num2;
+}
+console.log(sum(20, 30));
 
-// function greetUser(username: string, age: number){
-//   console.log(`hello ${username} with age ${age}`);
-// }
+function greetUser(username: string, age: number){
+  console.log(`hello ${username} with age ${age}`);
+}
 
-// greetUser("abdullah", 20);
+greetUser("abdullah", 20);
 
 //-----Type Inference-----//
 
@@ -99,6 +99,14 @@ fruits[0] = 4
 let main = ['jawad'];
 // main[0] = true;// not allow
 // main.push(4);// not allow
+
+
+//agar hama function ma union type istamal karni ha to lazmi return lagana paraga or return use nahi karna charaha to union type ki jaga void ka key word lagada nahi to sub sa VIP kam type define hi na karo
+function MainUser(username: string, age: number): (string | number) {
+  console.log(`hello ${username} with age ${age}`);
+  return `hello ${username} with age ${age}`
+}
+MainUser("abdullah", 20);
 
 
 //object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha.
