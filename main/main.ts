@@ -2,7 +2,7 @@ console.log('hello TypeScript.');
 
 // TypeScript is a superset of JavaScript that adds optional static typing and other features to improve the development experience and maintainability of large JavaScript applications.
 
-
+// npm install -g typescript  is command sa ya hota ha ka  TS  globally download hojati ha || is command ko cmd ma run karta ha || download hui ha ka nahi iska lia hum cmd ma  tsc --version  run karta ha
 // tsc filename.ts  is command sa JS ki file banjati ha
 // node filename.js  is command sa TS terminal pa run hogi
 // tsc filename.ts -w  is command sa TS live server ki tarha JS ma kam karti ha
