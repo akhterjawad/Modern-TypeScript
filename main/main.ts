@@ -26,17 +26,17 @@ console.log('hello TypeScript.');
 
 let usernameMain: string = 'abdullah';
 // username = true //not allowed
-// console.log(usernameMain);
+console.log(usernameMain);
 
-// let age:number = 20;
-// age = 21  // allowed
+let age:number = 20;
+age = 21  // allowed
 // console.log(age);
 
-// let isLoggedIn:boolean = true
-// console.log(isLoggedIn);
+let isLoggedIn:boolean = true
+console.log(isLoggedIn);
 
 // is tarika sa hum string ki array ki data type bata ta ha ,is array ma numbar ya boolean nahi dal sakta 
-// let user:string[] = ['abdullah']
+let user:string[] = ['abdullah']
 
 // type any
 
