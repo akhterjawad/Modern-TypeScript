@@ -24,38 +24,38 @@ console.log('hello TypeScript.');
 
 // Type Annotations ya hota ha ka jub aap TS ma variable banay to hath ka hath variable ki value ki type bhi batay
 
-let usernameMain: string = 'abdullah';
-// username = true //not allowed
-console.log(usernameMain);
+// let usernameMain: string = 'abdullah';
+// // username = true //not allowed
+// console.log(usernameMain);
 
-let age:number = 20;
-age = 21  // allowed
-// console.log(age);
+// let age:number = 20;
+// age = 21  // allowed
+// // console.log(age);
 
-let isLoggedIn:boolean = true
-console.log(isLoggedIn);
+// let isLoggedIn:boolean = true
+// console.log(isLoggedIn);
 
-// is tarika sa hum string ki array ki data type bata ta ha ,is array ma numbar ya boolean nahi dal sakta 
-let user:string[] = ['abdullah']
+// // is tarika sa hum string ki array ki data type bata ta ha ,is array ma numbar ya boolean nahi dal sakta 
+// let user:string[] = ['abdullah']
 
-// type any
+// // type any
 
-// type any ma ya hota ha ka data type ki jagha any ka key word lagadata ha is sa ya hota ha ka hum variable ki value ma jo likhta ha ,Number ,boolean ,string automatically type get karlata ha ,variable ki value 
+// // type any ma ya hota ha ka data type ki jagha any ka key word lagadata ha is sa ya hota ha ka hum variable ki value ma jo likhta ha ,Number ,boolean ,string automatically type get karlata ha ,variable ki value 
 
 
-let username: any = 'abdullah'
-username = 20 // allowed
+// let username: any = 'abdullah'
+// username = 20 // allowed
 
-function sum(num1: number, num2: number):number {
-  return num1 + num2;
-}
-console.log(sum(20, 30));
+// function sum(num1: number, num2: number):number {
+//   return num1 + num2;
+// }
+// console.log(sum(20, 30));
 
-function greetUser(username: string, age: number){
-  console.log(`hello ${username} with age ${age}`);
-}
+// function greetUser(username: string, age: number){
+//   console.log(`hello ${username} with age ${age}`);
+// }
 
-greetUser("abdullah", 20);
+// greetUser("abdullah", 20);
 
 //-----Type Inference-----//
 
@@ -79,6 +79,7 @@ greetUser("abdullah", 20);
 
 
 //-----Union Type-----//
+
 // type User = string | number;
 // let username: User = 1;
 // type Fruits = (string | number | boolean)[]
