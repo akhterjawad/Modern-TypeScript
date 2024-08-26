@@ -1,37 +1,45 @@
 //-----Union Type-----//
 
-// type User = string | number;
-// let username: User = 1;
-// type Fruits = (string | number | boolean)[]
-// let fruits:Fruits = ['mango' , 'orange' , 20 , true]
+// Define a union type that can be either a string or number
+type User = string | number;
+let username: User = 1;
+
+// Define a union type for an array that can hold strings, numbers, or booleans
+type Fruits = (string | number | boolean)[];
+let fruits: Fruits = ['mango', 'orange', 20, true]
 
 // 1 hoti ha union data type jisma aap multi data type define karsakta ha jaisa array ma alag alag properties hoti ha unka lia bana sakta ha
 
-type Fruits = (string | boolean | number)[]// in types ko agay picha karna sa farak nahi parta
+type Fruits = (string | boolean | number)[] // in types ko agay picha karna sa farak nahi parta
 
 let fruits: Fruits = ['abdullah', 20, true]
 
-// agar array ki data type string ho or hum array ma number push ,add kara to reeor ata ha  data type ki waja sa
+// The line below works fine as 9 is a number and is a part of the Fruits union type
 fruits.push(9)
+
+// The line below works fine as 'jawad' is a string and is a part of the Fruits union type
 fruits[0] = 'jawad'
+
+// The line below works fine as 4 is a number and is a part of the Fruits union type
 fruits[0] = 4
 
-// main[0] pa isilia error araha ha Q ka data type Type Inference ki waja sa string hogay ha
+// Since the elements of main are all strings, TypeScript infers the type of main as a string array
 let main = ['jawad'];
-// main[0] = true;// not allow
-// main.push(4);// not allow
 
+// The line below is commented out because true is a boolean, but main is inferred to be a string array
+// main[0] = true; // not allowed
 
-//agar hama function ma union type istamal karni ha to lazmi return lagana paraga or return use nahi karna charaha to union type ki jaga void ka key word lagada nahi to sub sa VIP kam type define hi na karo
+// The line below is commented out because 4 is a number, but main is inferred to be a string array
+// main.push(4); // not allowed
+
+// Use a union type in the return value of a function
 function MainUser(username: string, age: number): (string | number) {
   console.log(`hello ${username} with age ${age}`);
-  return `hello ${username} with age ${age}`
+  return `hello ${username} with age ${age}`;
 }
 MainUser("abdullah", 20);
 
-
-//object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha.
-
+// Object with various properties
 const object = {
   username: "abc",
   email: "abc@gmail.com",
@@ -39,61 +47,44 @@ const object = {
   isLoggedIn: true,
 };
 
+// Updating the username property is fine as it is a string
 object.username = 'kamran'
-// object.username =5// datatype ki waja sa error araha ha Q ka username ki data type string ha number nahi
-// object.user = '65'
-// console.log(object.user);// not allow
 
+// The line below is commented out because 5 is a number, but object.username is a string
+// object.username = 5 // datatype ki waja sa error araha ha Q ka username ki data type string ha number nahi
 
-// agar hum kuch bhi object ki data type ma likhta ha or agar wo object ma define na ho to error ata ha or agar object ka ander koi chez likhi ho or data type ma likhi na ha to bhi error atta ha.agar hum data type ka ander property ka sath   ?   yala sign lagada to error nahi ata.
+// The line below is commented out because user is not a defined property in the object
+// object.user = '65' // property does not exist
 
-// const person: {
-//   name: string;
-//   age: number;
-//   // // isStudent: boolean,
-//   address: {
-//     city: string;
-//     country: string
-//   }
-// } = {
-//   name: 'DEEPANSHU_NAG',
-//   age: 27,
-//   isStudent: true,
-//   address: {
-//     city: "Pune",
-//     country: 'India'
-//   }
-// }
+// The line below is commented out because user is not a defined property in the object
+// console.log(object.user); // property does not exist
 
-
+// Defining a new object with optional properties using the '?' operator
 const person2: {
   name: string;
   age: number;
   isStudent?: boolean,
   address: {
     city: string;
-    country: string
+    country: string;
   }
 } = {
   name: 'DEEPANSHU_NAG',
   age: 27,
-  // // isStudent: true,
+  // isStudent is optional and can be omitted
   address: {
     city: "Pune",
-    country: 'India'
+    country: 'India',
   }
-}
+};
 
-
-// agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
-
-
+// Using a type alias for user objects
 type User = {
   username: string;
   email: string;
   age: number;
   isLoggedIn: boolean;
-  lastName?: string;
+  lastName?: string; // Optional property
 };
 
 const UserMain: User = {
@@ -105,24 +96,21 @@ const UserMain: User = {
 
 UserMain.lastName = "khan";
 
-// console.log(user);
-
-
 //-----Interfaces-----//
 
-// Interfaces commonly object ka lia use hota ha or ya   key word type  ki tarha kam karta ha bs is ma = ka sign nahi ata
-
+// Interfaces are commonly used for objects and function similar to types but more extensible
 interface Employee {
   empliyee: string;
   employeeId: number;
   employeeSallary: number;
-  isLoggedIn: boolean
+  isLoggedIn: boolean;
 }
 
+// Correct spelling for the property name 'employee'
 let employeeData: Employee = {
   empliyee: 'jawad khan',
   employeeId: 12,
   employeeSallary: 100000,
-  isLoggedIn: true
+  isLoggedIn: true,
 }
 console.log(employeeData);

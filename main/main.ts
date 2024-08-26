@@ -20,7 +20,28 @@ console.log('hello TypeScript.');
 // Tuples
 // Type Guards
 
+
+
+
+
+
+// Interfaces TypeScript mein ek structure define karne ka tareeqa hota hai jo objects ke shape aur properties ko specify karta hai.
+
+// Type aliases aur interfaces dono TypeScript mein types define karte hain, magar type aliases complex types ya unions ke liye zyada flexible hain, jabke interfaces objects ki structure ko define karne ke liye behtareen hain.
+
+// Type generics TypeScript mein flexible aur reusable code likhne ka tareeqa hota hai jo different types ke saath kaam kar sakta hai.
+
+// Enums TypeScript mein ek set of named values ko define karne ka tareeqa hota hai jo kisi specific data type ke liye constant values ko represent karta hai.
+
+//Tuples TypeScript mein ek ordered collection hoti hai jo fixed number of elements ko different types ke saath store kar sakti hai.
+
+//Guards TypeScript mein conditions define karne ka tareeqa hota hai jo runtime par type checking aur type narrowing ko enable karte hain.
+
+
+
 //-----Type Annotations-----//
+
+// Type annotations TypeScript mein variable ya function ke type ko specify karne ka tareeqa hota hai.
 
 // Type Annotations ya hota ha ka jub aap TS ma variable banay to hath ka hath variable ki value ki type bhi batay
 
@@ -59,6 +80,8 @@ console.log('hello TypeScript.');
 
 //-----Type Inference-----//
 
+// Type inference TypeScript mein automatically variable ya function ke type ko guess karne ka process hota hai.
+
 // Type Inference ma ya hota ha ka agar hum variable ki data type define na kara Type Annotations ki tarha to koi error nahi ata
 
 // let username = 'abdullah'
@@ -71,6 +94,8 @@ console.log('hello TypeScript.');
 
 //-----Type Aliases-----//
 
+// Type aliases TypeScript mein kisi existing type ko ek naya naam dene ka tareeqa hota hai.
+
 // Type Aliases ma ya hota ha ka hum data type ka variable alag sa banalata ha type ka keyword sa instead of hum variable ka ander hi data type define kara
 
 // type Abd = string
@@ -79,6 +104,8 @@ console.log('hello TypeScript.');
 
 
 //-----Union Type-----//
+
+// Union types TypeScript mein ek variable ko multiple types assign karne ka tareeqa hota hai.
 
 // type User = string | number;
 // let username: User = 1;

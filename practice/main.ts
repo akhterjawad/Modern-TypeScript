@@ -6,8 +6,14 @@ let num1: number = 4
 let num2: number = 9
 console.log(num1 + num2);
 
+// error blow
+// function sum(value1: number, value2: number): void {
+//     return value1 + value2
+// }
+// console.log(sum(8, 5));
 
-function sum(value1: number, value2: number): number {
-    return value1 + value2
+function add(value1: number, value2: number): void {
+
+    console.log(value1 + value2)
 }
-console.log(sum(8, 5));
+add(8, 5);
