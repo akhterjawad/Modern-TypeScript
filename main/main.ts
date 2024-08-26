@@ -22,17 +22,6 @@ console.log('hello TypeScript.');
 
 
 
-
-
-
-// Interfaces TypeScript mein ek structure define karne ka tareeqa hota hai jo objects ke shape aur properties ko specify karta hai.
-
-// Type aliases aur interfaces dono TypeScript mein types define karte hain, magar type aliases complex types ya unions ke liye zyada flexible hain, jabke interfaces objects ki structure ko define karne ke liye behtareen hain.
-
-// Type generics TypeScript mein flexible aur reusable code likhne ka tareeqa hota hai jo different types ke saath kaam kar sakta hai.
-
-// Enums TypeScript mein ek set of named values ko define karne ka tareeqa hota hai jo kisi specific data type ke liye constant values ko represent karta hai.
-
 //Tuples TypeScript mein ek ordered collection hoti hai jo fixed number of elements ko different types ke saath store kar sakti hai.
 
 //Guards TypeScript mein conditions define karne ka tareeqa hota hai jo runtime par type checking aur type narrowing ko enable karte hain.
@@ -59,6 +48,23 @@ console.log('hello TypeScript.');
 // // is tarika sa hum string ki array ki data type bata ta ha ,is array ma numbar ya boolean nahi dal sakta 
 // let user:string[] = ['abdullah']
 
+// jub aap function ko data type data hoto ka function return kia karraha ha to waha pa void || any ka ilawa sub data type return zaroor karti ha nahi to error ata ha 
+
+function form(message: string): string {
+  console.log(message);
+  return message;  // Yahan pe message ko return karna hoga
+}
+form(`jawad`);
+
+
+function vip(message: string): number {
+  console.log(message);
+  return message.length;  // Yahan pe hum message ki length return kar rahe hain, jo ek number hai
+}
+vip(`jawad`);
+
+
+
 // // type any
 
 // // type any ma ya hota ha ka data type ki jagha any ka key word lagadata ha is sa ya hota ha ka hum variable ki value ma jo likhta ha ,Number ,boolean ,string automatically type get karlata ha ,variable ki value 
@@ -66,6 +72,16 @@ console.log('hello TypeScript.');
 
 // let username: any = 'abdullah'
 // username = 20 // allowed
+
+function processValue(value: any): any {
+  return value;
+}
+
+let myVar: any;
+myVar = 42;
+myVar = "hello";
+myVar = [1, 2, 3];
+
 
 // function sum(num1: number, num2: number):number {
 //   return num1 + num2;
@@ -128,13 +144,24 @@ let main = ['jawad'];
 // main[0] = true;// not allow
 // main.push(4);// not allow
 
+// Union type aapko ek variable ya function parameter ko multiple types assign karne ki ijaazat deta hai. Iska matlab hai ke aap ek hi variable ko alag-alag types ki values assign kar sakte hain.
 
 //agar hama function ma union type istamal karni ha to lazmi return lagana paraga or return use nahi karna charaha to union type ki jaga void ka key word lagada nahi to sub sa VIP kam type define hi na karo
+
+
 function MainUser(username: string, age: number): (string | number) {
   console.log(`hello ${username} with age ${age}`);
   return `hello ${username} with age ${age}`
 }
 MainUser("abdullah", 20);
+
+// void ka use zyada tar function ke return type ke liye hota hai. Jab function void return type rakhta hai, iska matlab hai ke woh function kuch bhi return nahi karta.
+
+function logMessage(message: string): void {
+  console.log(message);
+  // Yahan koi return value nahi hai
+}
+
 
 
 //object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha.
@@ -217,6 +244,8 @@ UserMain.lastName = "khan";
 
 //-----Interfaces-----//
 
+// Interfaces TypeScript mein ek structure define karne ka tareeqa hota hai jo objects ke shape aur properties ko specify karta hai.
+
 // Interfaces commonly object ka lia use hota ha or ya   key word type  ki tarha kam karta ha bs is ma = ka sign nahi ata
 
 interface Employee {
@@ -236,6 +265,8 @@ console.log(employeeData);
 
 
 //-----Interfaces vs Type Aliases-----//
+
+// Type aliases aur interfaces dono TypeScript mein types define karte hain, magar type aliases complex types ya unions ke liye zyada flexible hain, jabke interfaces objects ki structure ko define karne ke liye behtareen hain.
 
 // agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
@@ -309,7 +340,26 @@ console.log(employeeData);
 //   type: "sindhri",
 // };
 
+
+//-----Generics-----//
+
+// Type generics TypeScript mein flexible aur reusable code likhne ka tareeqa hota hai jo different types ke saath kaam kar sakta hai.
+
+// function identity<T>(arg: T): T {
+//   return arg;
+// }
+
+// console.log(identity('abd'));
+
+// function identity(arg: any): any {
+//   return [arg];
+// }
+
+// console.log(identity("abd"));
+
 //-----Enums-----//
+
+// Enums TypeScript mein ek set of named values ko define karne ka tareeqa hota hai jo kisi specific data type ke liye constant values ko represent karta hai.
 
 // enum CardinalDirections {
 //   North,
@@ -335,17 +385,3 @@ console.log(employeeData);
 // }
 
 // StatusCodes.NotFound;
-
-//-----Generics-----//
-
-// function identity<T>(arg: T): T {
-//   return arg;
-// }
-
-// console.log(identity('abd'));
-
-// function identity(arg: any): any {
-//   return [arg];
-// }
-
-// console.log(identity("abd"));
