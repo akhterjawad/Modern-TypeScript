@@ -146,7 +146,7 @@ let main = ['jawad'];
 
 // Union type aapko ek variable ya function parameter ko multiple types assign karne ki ijaazat deta hai. Iska matlab hai ke aap ek hi variable ko alag-alag types ki values assign kar sakte hain.
 
-//agar hama function ma union type istamal karni ha to lazmi return lagana paraga or return use nahi karna charaha to union type ki jaga void ka key word lagada nahi to sub sa VIP kam type define hi na karo
+//agar hama function ma union type, type Annotations istamal karni ha to lazmi return lagana paraga or return use nahi karna charaha hoto  void ka key word lagada nahi to sub sa VIP kam type define hi na karo
 
 
 function MainUser(username: string, age: number): (string | number) {
@@ -157,7 +157,7 @@ MainUser("abdullah", 20);
 
 // void ka use zyada tar function ke return type ke liye hota hai. Jab function void return type rakhta hai, iska matlab hai ke woh function kuch bhi return nahi karta.
 
-function logMessage(message: string): void {
+function logMessage(message: string): any {
   console.log(message);
   // Yahan koi return value nahi hai
 }
@@ -165,6 +165,8 @@ function logMessage(message: string): void {
 
 
 //object ma hamara pas ya hota ha ka jub hum object ki koi property ko use kara or wo property object ka ander exist nahi karti to error show hota ha jaisa nicha log ma araha ha.
+
+// TypeScript strictly types objects, aur aap ne jo object banaya hai us mein `user` property originally define nahi hui thi. Jab aap object.user = '65' likhte hain, TypeScript ko yeh samajh nahi aata ke `user` property ka type kya hona chahiye, kyun ke object ke structure mein `user` property define hi nahi hai. Is wajah se TypeScript error dega.
 
 const object = {
   username: "abc",
@@ -184,7 +186,7 @@ object.username = 'kamran'
 // const person: {
 //   name: string;
 //   age: number;
-//   // // isStudent: boolean,
+//   // isStudent: boolean,
 //   address: {
 //     city: string;
 //     country: string
@@ -192,7 +194,7 @@ object.username = 'kamran'
 // } = {
 //   name: 'DEEPANSHU_NAG',
 //   age: 27,
-//   isStudent: true,
+//   // isStudent: true/,
 //   address: {
 //     city: "Pune",
 //     country: 'India'
@@ -222,22 +224,22 @@ const person2: {
 // agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
 
-type User = {
-  username: string;
-  email: string;
-  age: number;
-  isLoggedIn: boolean;
-  lastName?: string;
-};
+// type User = {
+//   username: string;
+//   email: string;
+//   age: number;
+//   isLoggedIn: boolean;
+//   lastName?: string;
+// };
 
-const UserMain: User = {
-  username: "abc",
-  email: "abc@gmail.com",
-  age: 20,
-  isLoggedIn: true,
-};
+// const UserMain: User = {
+//   username: "abc",
+//   email: "abc@gmail.com",
+//   age: 20,
+//   isLoggedIn: true,
+// };
 
-UserMain.lastName = "khan";
+// UserMain.lastName = "khan";
 
 // console.log(user);
 
@@ -300,45 +302,29 @@ console.log(employeeData);
 //   state: string;
 // }
 
-// interface Mango extends Fruit {
-//   type: string;
-// }
 
-// let fruit: Fruit = {
-//   fruitName: "cherry",
-//   price: 1000,
-//   state: "KPK",
-// };
+// extends sirf interface ka sath lagta ha. extends sa ya hota ha ka aap kisi bhi nam ka object structure ma kisi bhi nam ka object structure ko add karasaktaha 
 
-// let mango: Mango = {
-//   fruitName: "mango",
-//   price: 3000,
-//   state: "sindh",
-//   type: "sindhri",
-// };
 
-// type Fruit = {
-//   fruitName: string;
-//   price: number;
-//   state: string;
-// };
+interface Hawaijaat {
+  name: string;
+  price: number;
+}
 
-// type Mango = Fruit & {
-//   type: string;
-// };
+interface Mobile extends Hawaijaat {
+  brand: string;
+  model: string;
+}
 
-// let fruit: Fruit = {
-//   fruitName: "cherry",
-//   price: 1000,
-//   state: "KPK",
-// };
+const myMobile: Mobile = {
+  name: "Smartphone",
+  price: 50000,
+  brand: "Samsung",
+  model: "Galaxy S21"
+};
 
-// let mango: Mango = {
-//   fruitName: "mango",
-//   price: 3000,
-//   state: "sindh",
-//   type: "sindhri",
-// };
+console.log(myMobile);
+
 
 
 //-----Generics-----//
