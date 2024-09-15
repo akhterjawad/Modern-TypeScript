@@ -4,8 +4,8 @@ console.log('hello TypeScript.');
 
 // npm install -g typescript  is command sa ya hota ha ka  TS  globally download hojati ha || is command ko cmd ma run karta ha || download hui ha ka nahi iska lia hum cmd ma  tsc --version  run karta ha to pata chalta ha ka  TS  aap ka pc ma ha ya nahi
 // tsc filename.ts  is command sa JS ki file banjati ha
-// node filename.js  is command sa TS terminal pa run hogi
 // tsc filename.ts -w  is command sa TS live server ki tarha JS ma kam karti ha
+// node filename.js  is command sa TS terminal pa run hogi
 
 
 // TS Compiler   p
@@ -375,14 +375,16 @@ hData = true; // boolean type
 
 // Enums TypeScript mein ek set of named values ko define karne ka tareeqa hota hai jo kisi specific data type ke liye constant values ko represent karta hai.
 
-// enum CardinalDirections {
-//   North,
-//   East,
-//   South,
-//   West,
-// }
-// let currentDirection = CardinalDirections.North;
-// console.log(currentDirection);
+// Enums TypeScript mein ek special data type hai jo ek group ya set of related constants ko define karne ke liye use hota hai. Iska maksad code ko zyada readable aur manageable banana hota hai. Hum enums tab use karte hain jab humein kisi cheez ke predefined aur fixed options ko represent karna ho, jaise days of the week, months, colors, etc.
+
+enum CardinalDirections {
+  North,
+  East,
+  South,
+  West,
+}
+let currentDirection = CardinalDirections.North;
+console.log(currentDirection);
 
 // enum User {
 //   admin = "admin",
@@ -399,3 +401,22 @@ hData = true; // boolean type
 // }
 
 // StatusCodes.NotFound;
+
+enum TrafficLight {
+  Red = "RED",
+  Yellow = "YELLOW",
+  Green = "GREEN",
+}
+// Is example mein TrafficLight enum ko use karke hum traffic signal ke colors define kar rahe hain. Jab kabhi hume kisi traffic light ka color check karna ho, hum enum ko use karenge:
+
+let currentLight: TrafficLight = TrafficLight.Red;
+
+// Faida Enum ka:
+// Enums ka sabse bada faida yeh hota hai ke hume magic numbers ya strings ko baar baar use nahi karna padta. Har enum value apne meaning ko clearly represent karti hai, aur agar value galat use karna chahein to TypeScript compile-time pe error throw karega, jo hume bugs se bachata hai.
+
+// Enums se code zyada readable, maintainable, aur less error-prone ho jata hai.
+
+//-----Tuples-----//
+
+// Tuples TypeScript mein ek ordered collection hoti hai jo fixed number of elements ko different types ke saath store kar sakti hai.
+
