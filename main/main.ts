@@ -134,7 +134,7 @@ type Fruits = (string | boolean | number)[]// in types ko agay picha karna sa fa
 
 let fruits: Fruits = ['abdullah', 20, true]
 
-// agar array ki data type string ho or hum array ma number push ,add kara to reeor ata ha  data type ki waja sa
+// agar array ki data type string ho or hum array ma number push ,add kara to error ata ha  data type ki waja sa
 fruits.push(9)
 fruits[0] = 'jawad'
 fruits[0] = 4
@@ -186,7 +186,7 @@ object.username = 'kamran'
 // const person: {
 //   name: string;
 //   age: number;
-//   // isStudent: boolean,
+//   isStudent: boolean,
 //   address: {
 //     city: string;
 //     country: string
@@ -194,7 +194,7 @@ object.username = 'kamran'
 // } = {
 //   name: 'DEEPANSHU_NAG',
 //   age: 27,
-//   // isStudent: true/,
+//   isStudent: true,
 //   address: {
 //     city: "Pune",
 //     country: 'India'
@@ -213,7 +213,7 @@ const person2: {
 } = {
   name: 'DEEPANSHU_NAG',
   age: 27,
-  // // isStudent: true,
+  // isStudent?: true,
   address: {
     city: "Pune",
     country: 'India'
@@ -270,7 +270,7 @@ console.log(employeeData);
 
 // Type aliases aur interfaces dono TypeScript mein types define karte hain, magar type aliases complex types ya unions ke liye zyada flexible hain, jabke interfaces objects ki structure ko define karne ke liye behtareen hain.
 
-// agar hum data type define kara ha  (type) ka key word sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
+// agar hum data type define kara ha  (type) ka keyword sa to  oska bad phir nicha usma kuch or add kara to error ata ha isi lia hum INTERFASE ka key word use karta ha
 
 // type User = {
 //     username: string;
@@ -303,7 +303,7 @@ console.log(employeeData);
 // }
 
 
-// extends sirf interface ka sath lagta ha. extends sa ya hota ha ka aap kisi bhi nam ka object structure ma kisi bhi nam ka object structure ko add karasaktaha 
+// extends sirf interface ka sath lagta ha. extends sa ya hota ha ka aap kisi bhi nam ka object structure ma kisi bhi nam ka object structure ko add kara saktaha 
 
 
 interface Hawaijaat {
