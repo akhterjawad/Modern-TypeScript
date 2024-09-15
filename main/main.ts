@@ -329,19 +329,47 @@ console.log(myMobile);
 
 //-----Generics-----//
 
+// 1. Generics:
+
 // Type generics TypeScript mein flexible aur reusable code likhne ka tareeqa hota hai jo different types ke saath kaam kar sakta hai.
 
-// function identity<T>(arg: T): T {
-//   return arg;
-// }
+// Generics ka matlab hai ke aap ek type ko dynamic banate hain taake ek function ya class har tarah ke data ke sath kaam kar sake, lekin type-safety bhi maintain rahe. Generics specific types ke sath kaam karne ke liye design kiye gaye hain, lekin wo run-time pe decide hote hain.
 
-// console.log(identity('abd'));
 
-// function identity(arg: any): any {
-//   return [arg];
-// }
+function hAdd<T>(a: T, b: T): T {
+  return a;
+}
 
-// console.log(identity("abd"));
+console.log(hAdd<number>(5, 10)); // number types ke sath
+console.log(hAdd<string>("Hello", "World")); // string types ke sath
+
+// 2. Union Type:
+// Union types ka matlab hota hai ke ek variable ya function multiple types ko support kar sakta hai. Aap define karte hain ke koi value do ya zyada types me se ek ho sakti hai.
+
+function hPrint(value: string | number): void {
+  console.log(value);
+}
+
+hPrint(123); // number type
+hPrint("Hello"); // string type
+
+
+// 3. Any:
+// any type use karne ka matlab hai ke aap TypeScript ko bata rahe hain ke is variable ka type check nahi kiya jayega. Is se aap kisi bhi type ki value assign kar sakte hain, lekin type-safety kaafi kam ho jati hai.
+
+
+let hData: any;
+hData = 123; // number type
+hData = "Hello"; // string type
+hData = true; // boolean type
+
+
+// Generics: Type ko dynamic banata hai lekin specific type ke sath kaam karta hai. Type-safety ko barqarar rakhta hai.
+
+// Union Type: Ek variable ya function multiple specific types ko accept karta hai, lekin sirf un types ko jo defined hain.
+
+// any: Har tarah ki type ko allow karta hai, lekin type-safety ko compromise karta hai.
+
 
 //-----Enums-----//
 
